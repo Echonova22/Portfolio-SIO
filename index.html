@@ -36,6 +36,11 @@
       background: #34495e;
       color: white;
       font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    #theme-toggle:hover {
+      background: #2c3e50;
     }
 
     nav#navbar {
@@ -53,193 +58,478 @@
       color: white;
       text-decoration: none;
       padding: 15px 25px;
-      transition: background 0.3s;
+      margin: 2px;
+      border-radius: 5px;
+      transition: background 0.3s, transform 0.2s;
     }
 
-    nav a:hover { background: #2c3e50; }
+    nav a:hover {
+      background: #2c3e50;
+      transform: scale(1.05);
+    }
 
     section {
       padding: 50px 20px;
-      max-width: 1100px;
+      max-width: 1000px;
       margin: 30px auto;
       background: white;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
 
     h2 {
       color: #2c3e50;
+      margin-bottom: 20px;
       border-bottom: 3px solid #2c3e50;
       padding-bottom: 10px;
     }
 
-    h3 { color: #34495e; margin-top: 25px; }
-
     /* ==== Accordions ==== */
     .accordion-header {
       cursor: pointer;
-      padding: 12px;
+      padding: 10px;
       background: #34495e;
       color: white;
       margin-top: 10px;
       border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .accordion-header:hover {
+      background: #2c3e50;
     }
 
     .accordion-body {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease;
-      background: #f9f9f9;
+      padding: 0 15px;
+      background: #f0f0f0;
       border-left: 3px solid #34495e;
+      margin-bottom: 10px;
     }
 
     .accordion-body.active {
-      max-height: 1200px;
-      padding: 15px;
+      padding: 10px 15px;
+      max-height: 800px;
     }
 
-    /* ==== Tableaux ==== */
-    .table-container { overflow-x: auto; margin-top: 20px; }
+    /* Tableaux */
     table {
       width: 100%;
       border-collapse: collapse;
+      margin-top: 20px;
       background: white;
+      color: #333;
       font-size: 0.85em;
     }
-    th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
-    th { background: #34495e; color: white; }
-    tr:nth-child(even) { background: #f2f2f2; }
 
-    /* Mode Sombre */
-    body.dark-mode { background: #121212; color: #e0e0e0; }
-    body.dark-mode section { background: #1e1e1e; }
-    body.dark-mode h2 { color: white; border-bottom-color: #555; }
-    body.dark-mode .accordion-header { background: #2a2a2a; }
-    body.dark-mode .accordion-body { background: #252525; }
-    body.dark-mode table { background: #1e1e1e; color: #e0e0e0; }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
 
-    footer { text-align: center; padding: 30px; background: #2c3e50; color: white; margin-top: 50px; }
+    th {
+      background: #34495e;
+      color: white;
+      padding: 8px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    td {
+      padding: 8px;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    td:first-child {
+      text-align: left;
+    }
+
+    td:last-child {
+      text-align: left;
+    }
+
+    .section-row td {
+      background: #2c3e50;
+      color: white;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .header-row td {
+      background: #ecf0f1;
+      font-weight: bold;
+      font-style: italic;
+      text-align: left;
+      color: #2c3e50;
+    }
+
+    .checked {
+      color: #27ae60;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #2c3e50;
+      color: white;
+    }
+
+    /* ==== Mode sombre ==== */
+    body.dark-mode {
+      background: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode section {
+      background: #1e1e1e;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+
+    body.dark-mode h2 {
+      color: #ffffff;
+      border-bottom: 3px solid #555555;
+    }
+
+    body.dark-mode nav#navbar {
+      background: #1a1a1a;
+      border-bottom: 1px solid #333;
+    }
+
+    body.dark-mode nav a {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode nav a:hover {
+      background: #333333;
+    }
+
+    body.dark-mode .accordion-header {
+      background: #2a2a2a;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .accordion-header:hover {
+      background: #3d3d3d;
+    }
+
+    body.dark-mode .accordion-body {
+      background: #252525;
+      border-left: 3px solid #555555;
+    }
+
+    body.dark-mode table {
+      background: #1e1e1e;
+      color: #e0e0e0;
+      border-color: #555;
+    }
+
+    body.dark-mode th {
+      background: #2a2a2a;
+      color: #ffffff;
+    }
+
+    body.dark-mode td {
+      border-color: #555;
+    }
+
+    body.dark-mode .section-row td {
+      background: #1a1a1a;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .header-row td {
+      background: #2a2a2a;
+      color: #aaaaaa;
+    }
+
+    body.dark-mode footer {
+      background: #1a1a1a;
+      color: #e0e0e0;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+      nav a {
+        padding: 12px 20px;
+      }
+      section {
+        padding: 30px 15px;
+      }
+    }
   </style>
 </head>
 <body>
 
 <header>
   <h1>Portfolio BTS SIO - THOME Steven</h1>
-  <p>Étudiant en BTS Services Informatiques aux Organisations - Option SISR</p>
+  <p>Étudiant en BTS Services Informatiques aux Organisations</p>
   <button id="theme-toggle">🌙 Mode sombre</button>
 </header>
 
 <nav id="navbar">
   <a href="#presentation">Présentation</a>
+  <a href="#formation">Formation</a>
+  <a href="#alternance">Alternance</a>
   <a href="#projets">Projets</a>
+  <a href="#veille">Veille</a>
   <a href="#missions">Missions</a>
-  <a href="#competences">Compétences (B3 & E5)</a>
+  <a href="#competences">Compétences</a>
 </nav>
 
 <section id="presentation">
-  <h2>Présentation & Alternance</h2>
-  <p>Bonjour, je m'appelle <b>THOME Steven</b>, étudiant en SISR. J'effectue mon alternance au <b>Département d'Ille-et-Vilaine</b> (27 321 agents), où je m'occupe du support utilisateur et de la gestion du parc.</p>
+  <h2>Présentation personnelle</h2>
+  <p>Bonjour, je m'appelle Steven THOME, étudiant en BTS SIO option SISR. Je suis passionné par les systèmes et réseaux informatiques.</p>
+</section>
+
+<section id="formation">
+  <h2>Ma formation</h2>
+  <p>Le <b>BTS SIO</b> prépare aux métiers de l'informatique en entreprise et dans le secteur public.</p>
+  <p>J'ai choisi l'option <b>SISR</b> pour la gestion des systèmes et réseaux.</p>
+</section>
+
+<section id="alternance">
+  <h2>Mon alternance</h2>
+  <p>Le Département d'Ille-et-Vilaine est composé de 27 321 agents. Mes missions : gestion des tickets, installations et support utilisateurs.</p>
 </section>
 
 <section id="projets">
   <h2>Mes projets</h2>
   <div class="accordion">
-    <div class="accordion-header">Projet 1 : Infrastructure Active Directory Complète</div>
+    <h3 class="accordion-header">Projet 1 : Installation d'un serveur Active Directory</h3>
     <div class="accordion-body">
-      <p>Mise en place d'un environnement Windows Server incluant :</p>
+      <p><strong>Objectif :</strong> Mettre en place une infrastructure serveur complète sous Windows Server avec les services suivants :</p>
       <ul>
-        <li><b>AD DS :</b> Gestion centralisée des utilisateurs et des ordinateurs.</li>
-        <li><b>DNS & DHCP :</b> Résolution de noms et attribution dynamique d'adresses IP.</li>
-        <li><b>Serveur de fichiers :</b> Création de partages réseau avec gestion fine des droits NTFS.</li>
-        <li><b>GPO :</b> Application de stratégies de groupe (lecteurs réseaux, sécurité, personnalisation).</li>
+        <li><strong>Active Directory (AD)</strong> : création du domaine, gestion des utilisateurs, des groupes et des unités d'organisation.</li>
+        <li><strong>DHCP</strong> : configuration d'un serveur DHCP pour l'attribution automatique des adresses IP aux postes clients du réseau.</li>
+        <li><strong>DNS</strong> : mise en place du service de résolution de noms pour le bon fonctionnement du domaine Active Directory.</li>
+        <li><strong>Serveur de partage de fichiers</strong> : création de dossiers partagés avec gestion des droits d'accès par groupes d'utilisateurs.</li>
+        <li><strong>GPO (Group Policy Objects)</strong> : déploiement de stratégies de groupe pour uniformiser les configurations des postes clients (fond d'écran, restrictions, scripts de connexion, etc.).</li>
       </ul>
+      <p><strong>Technologies utilisées :</strong> Windows Server 2019, Active Directory Domain Services (AD DS), DHCP Server, DNS Server, Group Policy Management Console (GPMC).</p>
+      <p><strong>Résultat :</strong> Infrastructure fonctionnelle permettant la gestion centralisée des utilisateurs, des ressources réseau et des politiques de sécurité.</p>
     </div>
 
-    <div class="accordion-header">Projet 2 : Déploiement d'un serveur GLPI</div>
+    <h3 class="accordion-header">Projet 2 : Mise en place d'un serveur GLPI</h3>
     <div class="accordion-body">
-      <p>Installation et configuration de la solution de gestion de parc et helpdesk :</p>
+      <p><strong>Objectif :</strong> Déployer et configurer un serveur GLPI (Gestionnaire Libre de Parc Informatique) pour la gestion du parc informatique.</p>
       <ul>
-        <li>Installation sur stack LAMP (Linux, Apache, MySQL, PHP).</li>
-        <li>Configuration des entités et import des utilisateurs via LDAP.</li>
-        <li><b>Inventaire :</b> Ajout des postes de travail via l'agent GLPI pour un suivi automatique du matériel.</li>
-        <li>Mise en place du système de ticketing pour le support.</li>
+        <li><strong>Installation du serveur GLPI</strong> : déploiement sur un serveur Linux avec configuration de la pile LAMP (Linux, Apache, MySQL, PHP).</li>
+        <li><strong>Configuration de GLPI</strong> : paramétrage des catégories de tickets, des entités, des profils utilisateurs et des notifications par mail.</li>
+        <li><strong>Ajout des utilisateurs</strong> : création des comptes utilisateurs, affectation des rôles et des droits d'accès selon les profils (technicien, administrateur, utilisateur).</li>
+        <li><strong>Inventaire des postes</strong> : ajout et recensement des équipements informatiques (ordinateurs, périphériques, logiciels) dans la base de données GLPI pour assurer un suivi complet du parc.</li>
       </ul>
+      <p><strong>Technologies utilisées :</strong> Debian Linux, Apache2, MySQL/MariaDB, PHP, GLPI, FusionInventory (agent d'inventaire automatique).</p>
+      <p><strong>Résultat :</strong> Outil de gestion de parc opérationnel permettant de centraliser les demandes d'assistance, de suivre les incidents et d'inventorier l'ensemble des actifs informatiques de l'organisation.</p>
     </div>
   </div>
+</section>
+
+<section id="veille">
+  <h2>Veille informatique</h2>
+  <p>Lors de ma veille informatique sur l'IA, j'ai utilisé <b>Netvibes</b>. J'ai découvert les avancées majeures de l'IA et les nouvelles technologies émergentes.</p>
 </section>
 
 <section id="missions">
-  <h2>Missions du référentiel</h2>
-  <div class="accordion">
-    <div class="accordion-header">Gérer le patrimoine informatique</div>
-    <div class="accordion-body">Recenser et inventorier les équipements, logiciels et ressources numériques.</div>
-    <div class="accordion-header">Répondre aux incidents et demandes d'assistance</div>
-    <div class="accordion-body">Traiter les tickets utilisateurs, assurer le support technique et suivre les interventions.</div>
+  <h2>Mes missions</h2>
+  <div class="accordion-missions">
+    <h3 class="accordion-header">Gérer le patrimoine informatique</h3>
+    <div class="accordion-body">
+      <p>Recenser et inventorier les équipements, logiciels et ressources numériques.</p>
     </div>
+
+    <h3 class="accordion-header">Répondre aux incidents et aux demandes d'assistance et d'évolution</h3>
+    <div class="accordion-body">
+      <p>Traiter les tickets utilisateurs, assurer le support technique et suivre les interventions.</p>
+    </div>
+
+    <h3 class="accordion-header">Développer la présence en ligne de l'organisation</h3>
+    <div class="accordion-body">
+      <p>Mettre à jour le site web, créer du contenu et améliorer le référencement.</p>
+    </div>
+
+    <h3 class="accordion-header">Travailler en mode projet</h3>
+    <div class="accordion-body">
+      <p>Planifier et coordonner les actions dans un cadre projet.</p>
+    </div>
+
+    <h3 class="accordion-header">Mettre à disposition des utilisateurs un service informatique</h3>
+    <div class="accordion-body">
+      <p>Installer, configurer et déployer les services numériques aux utilisateurs.</p>
+    </div>
+
+    <h3 class="accordion-header">Organiser son développement professionnel</h3>
+    <div class="accordion-body">
+      <p>Assurer sa veille, gérer son identité numérique et développer son projet professionnel.</p>
+    </div>
+  </div>
 </section>
 
 <section id="competences">
-  <h2>Tableau de compétences (Annexe B3)</h2>
-  <div class="table-container">
+  <h2>Tableau de synthèse des réalisations professionnelles (Annexe E5)</h2>
+  <p><strong>BTS Services Informatiques aux Organisations — Session 2025 — Option : SISR</strong></p>
+  <div style="overflow-x:auto;">
     <table>
       <thead>
         <tr>
-          <th>Compétences développées</th>
-          <th>Indicateurs de performance</th>
+          <th rowspan="2" style="min-width:220px;">Réalisations professionnelles<br><small>(intitulé et liste des documents et productions associés)</small></th>
+          <th rowspan="2" style="min-width:130px;">Période</th>
+          <th colspan="6">Compétences mises en œuvre</th>
+        </tr>
+        <tr>
+          <th style="min-width:130px;">Gérer le patrimoine informatique</th>
+          <th style="min-width:130px;">Répondre aux incidents et aux demandes d'assistance et d'évolution</th>
+          <th style="min-width:130px;">Développer la présence en ligne de l'organisation</th>
+          <th style="min-width:130px;">Travailler en mode projet</th>
+          <th style="min-width:130px;">Mettre à disposition des utilisateurs un service informatique</th>
+          <th style="min-width:130px;">Organiser son développement professionnel</th>
+        </tr>
+        <tr class="header-row">
+          <td colspan="2"><em>Sous-compétences ▼</em></td>
+          <td>▸Recenser et identifier les ressources numériques<br>▸Exploiter des référentiels, normes et standards<br>▸Mettre en place et vérifier les niveaux d'habilitation<br>▸Vérifier la continuité d'un service<br>▸Gérer des sauvegardes<br>▸Vérifier le respect des règles d'utilisation</td>
+          <td>▸Collecter, suivre et orienter des demandes<br>▸Traiter des demandes réseau, système et applicatifs<br>▸Traiter des demandes concernant les applications</td>
+          <td>▸Participer à la valorisation de l'image sur les médias numériques<br>▸Référencer les services en ligne<br>▸Participer à l'évolution d'un site Web</td>
+          <td>▸Analyser les objectifs et modalités d'organisation<br>▸Planifier les activités<br>▸Évaluer les indicateurs de suivi et analyser les écarts</td>
+          <td>▸Réaliser les tests d'intégration et d'acceptation<br>▸Déployer un service<br>▸Accompagner les utilisateurs</td>
+          <td>▸Mettre en place son environnement d'apprentissage<br>▸Mettre en œuvre des outils de veille informationnelle<br>▸Gérer son identité professionnelle<br>▸Développer son projet professionnel</td>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td><b>Gérer le patrimoine informatique</b><br>Recenser, exploiter les référentiels, gérer les sauvegardes, vérifier les habilitations.</td>
-          <td>Le recensement est exhaustif, les sauvegardes sont fonctionnelles, les habilitations respectent les règles de sécurité.</td>
+        <!-- Réalisations en cours de formation -->
+        <tr class="section-row">
+          <td colspan="8">Réalisation en cours de formation</td>
         </tr>
         <tr>
-          <td><b>Répondre aux incidents</b><br>Collecter, suivre et orienter les demandes, traiter les incidents réseaux/systèmes.</td>
-          <td>Les demandes sont prises en compte rapidement, les solutions apportées sont documentées.</td>
+          <td>Veille informatique sur l'IA au cours des deux années</td>
+          <td>01/09 au 05/2024</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="checked">✔</td>
         </tr>
         <tr>
-          <td><b>Développer la présence en ligne</b><br>Participer à la valorisation de l'image, évolution de site web.</td>
-          <td>L'image de l'organisation est valorisée, le site est à jour.</td>
+          <td>TD : Installation de deux VM (DEBIAN et Windows)</td>
+          <td>03/10/2023</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="checked">✔</td>
+          <td></td>
         </tr>
         <tr>
-          <td><b>Travailler en mode projet</b><br>Analyser les objectifs, planifier, évaluer les indicateurs.</td>
-          <td>Les délais sont respectés, les écarts sont analysés.</td>
+          <td>TD : Création d'un réseau NAT entre deux VM Linux</td>
+          <td>11/11/2024</td>
+          <td class="checked">✔</td>
+          <td></td>
+          <td></td>
+          <td class="checked">✔</td>
+          <td class="checked">✔</td>
+          <td class="checked">✔</td>
         </tr>
         <tr>
-          <td><b>Mettre à disposition un service</b><br>Tests d'intégration, déploiement, accompagnement utilisateur.</td>
-          <td>Le service est opérationnel, les utilisateurs sont formés.</td>
+          <td>TD : Création de mon Portfolio</td>
+          <td>15/11/2025</td>
+          <td></td>
+          <td></td>
+          <td class="checked">✔</td>
+          <td></td>
+          <td></td>
+          <td></td>
         </tr>
         <tr>
-          <td><b>Organiser son développement professionnel</b><br>Veille informationnelle, gestion de l'identité numérique.</td>
-          <td>La veille est régulière et pertinente.</td>
+          <td>TD : Déploiement d'un mini-SI d'entreprise</td>
+          <td>17/11 au 18/11/2024</td>
+          <td class="checked">✔</td>
+          <td class="checked">✔</td>
+          <td></td>
+          <td class="checked">✔</td>
+          <td class="checked">✔</td>
+          <td class="checked">✔</td>
         </tr>
-      </tbody>
-    </table>
-  </div>
 
-  <h3>Tableau de synthèse Épreuve E5 (Fichier joint)</h3>
-  <div class="table-container">
-    <table>
-      <thead>
-        <tr>
-          <th>Réalisations</th>
-          <th>Période</th>
-          <th>Patrimoine</th>
-          <th>Incidents</th>
-          <th>Ligne</th>
-          <th>Projet</th>
-          <th>Service</th>
-          <th>Dével.</th>
+        <!-- Réalisations en milieu professionnel - 1ère année -->
+        <tr class="section-row">
+          <td colspan="8">Réalisations en milieu professionnel en cours de première année</td>
         </tr>
-      </thead>
-      <tbody>
-        <tr><td>Veille informatique sur L'IA</td><td>01/09 au 05/2024</td><td></td><td></td><td></td><td></td><td></td><td>X</td></tr>
-        <tr><td>TD : Installation VM (Debian/Win)</td><td>03/10/2023</td><td></td><td></td><td></td><td></td><td>X</td><td></td></tr>
-        <tr><td>TD : Réseau NAT (Linux)</td><td>11/11/2024</td><td>X</td><td></td><td></td><td>X</td><td>X</td><td>X</td></tr>
-        <tr><td>TD : Création du Portfolio</td><td>15/11/2025</td><td></td><td></td><td>X</td><td></td><td></td><td></td></tr>
-        <tr><td>TD : Déploiement mini-SI</td><td>17/11 au 18/11/24</td><td>X</td><td>X</td><td></td><td>X</td><td>X</td><td>X</td></tr>
-        <tr><td>Gestion tickets EasyVista (Alternance)</td><td>01/09/25...</td><td>X</td><td>X</td><td></td><td></td><td>X</td><td>X</td></tr>
-        <tr><td>Projet MAC vers PC</td><td>11/04 au 27/05/25</td><td>X</td><td></td><td></td><td>X</td><td>X</td><td></td></tr>
+        <tr>
+          <td>Gestion des tickets via le logiciel de ticketing EasyVista</td>
+          <td>01/09/2025 à ...</td>
+          <td class="checked">✔</td>
+          <td class="checked">✔</td>
+          <td></td>
+          <td></td>
+          <td class="checked">✔</td>
+          <td class="checked">✔</td>
+        </tr>
+        <tr>
+          <td>Projet changement de MAC à PC pour le service Communication</td>
+          <td>11/04 au 27/05/2025</td>
+          <td class="checked">✔</td>
+          <td></td>
+          <td></td>
+          <td class="checked">✔</td>
+          <td class="checked">✔</td>
+          <td class="checked">✔</td>
+        </tr>
+        <tr>
+          <td>Intégration de poste au domaine</td>
+          <td>12/05/2024</td>
+          <td class="checked">✔</td>
+          <td class="checked">✔</td>
+          <td></td>
+          <td class="checked">✔</td>
+          <td class="checked">✔</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Récupération de données pour transfert de poste</td>
+          <td></td>
+          <td></td>
+          <td class="checked">✔</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <!-- Réalisations en milieu professionnel - 2ème année -->
+        <tr class="section-row">
+          <td colspan="8">Réalisations en milieu professionnel en cours de seconde année</td>
+        </tr>
+        <tr>
+          <td>Gestion des tickets via le logiciel de ticketing EasyVista</td>
+          <td>au 28/04/2025</td>
+          <td class="checked">✔</td>
+          <td class="checked">✔</td>
+          <td></td>
+          <td></td>
+          <td class="checked">✔</td>
+          <td class="checked">✔</td>
+        </tr>
+        <tr>
+          <td>Amélioration de mon portfolio</td>
+          <td>23/03 au 29/03/2026</td>
+          <td></td>
+          <td></td>
+          <td class="checked">✔</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -250,15 +540,18 @@
 </footer>
 
 <script>
-  // Mode sombre
-  document.getElementById('theme-toggle').addEventListener('click', () => {
+  // Toggle mode sombre
+  const toggleButton = document.getElementById('theme-toggle');
+  toggleButton.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
+    toggleButton.textContent = document.body.classList.contains('dark-mode') ? '☀️ Mode clair' : '🌙 Mode sombre';
   });
 
-  // Accordéons
+  // Accordion projets et missions
   document.querySelectorAll('.accordion-header').forEach(header => {
     header.addEventListener('click', () => {
-      header.nextElementSibling.classList.toggle('active');
+      const body = header.nextElementSibling;
+      body.classList.toggle('active');
     });
   });
 </script>
