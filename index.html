@@ -70,7 +70,7 @@
 
     section {
       padding: 50px 20px;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 30px auto;
       background: white;
       border-radius: 10px;
@@ -93,12 +93,13 @@
     /* ==== Accordions ==== */
     .accordion-header {
       cursor: pointer;
-      padding: 10px;
+      padding: 15px;
       background: #34495e;
       color: white;
       margin-top: 10px;
       border-radius: 5px;
       transition: background 0.3s;
+      font-size: 1.1em;
     }
 
     .accordion-header:hover {
@@ -110,38 +111,44 @@
       overflow: hidden;
       transition: max-height 0.3s ease;
       padding: 0 15px;
-      background: #f0f0f0;
-      border-left: 3px solid #34495e;
+      background: #f9f9f9;
+      border-left: 4px solid #34495e;
       margin-bottom: 10px;
     }
 
-    /* Classe active */
     .accordion-body.active {
-      padding: 10px 15px;
-      max-height: 500px; /* Ajustable selon le contenu */
+      padding: 15px;
+      max-height: 1000px;
     }
 
     /* Tableaux */
+    .table-container {
+      overflow-x: auto;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
       background: white;
       color: #333;
+      font-size: 0.9em;
     }
 
-    table, th, td {
+    th, td {
       border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
     }
 
     th {
       background: #34495e;
       color: white;
+      white-space: nowrap;
     }
 
-    td {
-      padding: 10px;
-      vertical-align: top;
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
     }
 
     footer {
@@ -152,78 +159,19 @@
     }
 
     /* ==== Mode sombre ==== */
-    body.dark-mode {
-      background: #121212;
-      color: #e0e0e0;
-    }
-
-    body.dark-mode section {
-      background: #1e1e1e;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-    }
-
-    body.dark-mode h2 {
-      color: #ffffff;
-      border-bottom: 3px solid #555555;
-    }
-
-    body.dark-mode nav#navbar {
-      background: #1a1a1a;
-      border-bottom: 1px solid #333;
-    }
-
-    body.dark-mode nav a {
-      color: #e0e0e0;
-    }
-
-    body.dark-mode nav a:hover {
-      background: #333333;
-    }
-
-    body.dark-mode .accordion-header {
-      background: #2a2a2a;
-      color: #e0e0e0;
-    }
-
-    body.dark-mode .accordion-header:hover {
-      background: #3d3d3d;
-    }
-
-    body.dark-mode .accordion-body {
-      background: #252525;
-      border-left: 3px solid #555555;
-    }
-
-    body.dark-mode table {
-      background: #1e1e1e;
-      color: #e0e0e0;
-      border-color: #555;
-    }
-
-    body.dark-mode th {
-      background: #2a2a2a;
-      color: #ffffff;
-    }
-
-    body.dark-mode td {
-      border-color: #555;
-    }
-
-    body.dark-mode footer {
-      background: #1a1a1a;
-      color: #e0e0e0;
-    }
+    body.dark-mode { background: #121212; color: #e0e0e0; }
+    body.dark-mode section { background: #1e1e1e; box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
+    body.dark-mode h2 { color: #ffffff; border-bottom: 3px solid #555; }
+    body.dark-mode nav#navbar { background: #1a1a1a; }
+    body.dark-mode .accordion-header { background: #2a2a2a; }
+    body.dark-mode .accordion-body { background: #252525; border-left-color: #555; }
+    body.dark-mode table { background: #1e1e1e; color: #e0e0e0; border-color: #444; }
+    body.dark-mode th { background: #2a2a2a; }
+    body.dark-mode tr:nth-child(even) { background-color: #252525; }
 
     @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-      }
-      nav a {
-        padding: 12px 20px;
-      }
-      section {
-        padding: 30px 15px;
-      }
+      nav { flex-direction: column; }
+      nav a { padding: 12px 20px; }
     }
   </style>
 </head>
@@ -231,7 +179,7 @@
 
 <header>
   <h1>Portfolio BTS SIO - THOME Steven</h1>
-  <p>Étudiant en BTS Services Informatiques aux Organisations</p>
+  <p>Étudiant en BTS Services Informatiques aux Organisations - Option SISR</p>
   <button id="theme-toggle">🌙 Mode sombre</button>
 </header>
 
@@ -241,173 +189,123 @@
   <a href="#alternance">Alternance</a>
   <a href="#projets">Projets</a>
   <a href="#veille">Veille</a>
-  <a href="#missions">Missions</a>
   <a href="#competences">Compétences</a>
 </nav>
 
 <section id="presentation">
   <h2>Présentation personnelle</h2>
-  <p>Bonjour, je m'appelle THOME Steven, étudiant en BTS SIO option SISR. Je suis passionné par la découverte musical, l'informatique et les jeux vidéo.</p>
+  <p>Bonjour, je m'appelle <b>THOME Steven</b>, étudiant en BTS SIO option SISR. Passionné par l'informatique, la découverte musicale et l'univers du jeu vidéo, je m'épanouis dans la gestion et l'optimisation des infrastructures réseaux.</p>
 </section>
 
 <section id="formation">
   <h2>Ma formation</h2>
-  <p>Le <b>BTS SIO</b> prépare aux métiers de l’informatique en entreprise et dans le secteur public.</p>
-  <p>J’ai choisi l’option <b>SISR</b> pour la gestion des systèmes et réseaux.</p>
+  <p>Le <b>BTS SIO</b> (Services Informatiques aux Organisations) prépare à la gestion de parcs informatiques et au développement de solutions logicielles.</p>
+  <p>J’ai choisi l’option <b>SISR</b> (Solutions d'Infrastructure, Systèmes et Réseaux) pour me spécialiser dans l'administration système, la sécurité et la maintenance des réseaux d'entreprise.</p>
 </section>
 
 <section id="alternance">
   <h2>Mon alternance</h2>
-  <p>Le Département d'Ille-et-Vilaine est composé de 27 321 agents. Mes missions : gestion des tickets, installations et support utilisateurs.</p>
+  <p>J'effectue mon apprentissage au sein du <b>Département d'Ille-et-Vilaine</b> (27 321 agents). Mes missions principales incluent :</p>
+  <ul>
+    <li>Support technique et assistance utilisateur (Helpdesk).</li>
+    <li>Gestion de parc via l'outil de ticketing EasyVista.</li>
+    <li>Installation et déploiement de postes de travail.</li>
+  </ul>
 </section>
 
 <section id="projets">
   <h2>Mes projets</h2>
   <div class="accordion">
-    <h3 class="accordion-header">Projet 1 : Titre</h3>
+    <h3 class="accordion-header">Projet 1 : Mise en place d'une infrastructure Active Directory complète</h3>
     <div class="accordion-body">
-      <p>Description du projet, objectifs, technologies utilisées et résultats.</p>
+      <p><b>Objectif :</b> Créer un domaine sécurisé et centralisé pour une organisation.</p>
+      <ul>
+        <li><b>Active Directory (AD DS) :</b> Configuration de la forêt, du domaine et création d'Unités d'Organisation (OU).</li>
+        <li><b>DNS & DHCP :</b> Installation et configuration des rôles pour la résolution de noms et l'adressage IP automatique des clients.</li>
+        <li><b>Serveur de fichiers :</b> Mise en place de partages réseau avec gestion des droits NTFS et partage.</li>
+        <li><b>GPO (Stratégies de groupe) :</b> Déploiement de règles de sécurité (fond d'écran, restriction panneau de config, montage automatique des lecteurs réseau).</li>
+      </ul>
     </div>
-    <h3 class="accordion-header">Projet 2 : Titre</h3>
+
+    <h3 class="accordion-header">Projet 2 : Déploiement et configuration de GLPI</h3>
     <div class="accordion-body">
-      <p>Description du projet, objectifs, technologies utilisées et résultats.</p>
+      <p><b>Objectif :</b> Centraliser la gestion du parc informatique et le suivi des tickets d'assistance.</p>
+      <ul>
+        <li><b>Installation :</b> Mise en place de l'environnement LAMP (Linux, Apache, MySQL, PHP).</li>
+        <li><b>Configuration :</b> Paramétrage des entités, des profils utilisateurs et des catégories de tickets.</li>
+        <li><b>Inventaire :</b> Utilisation de l'agent FusionInventory/GLPI Agent pour la remontée automatique des postes de travail et serveurs dans la base de données.</li>
+        <li><b>Utilisateurs :</b> Importation et synchronisation avec l'annuaire LDAP/AD.</li>
+      </ul>
     </div>
   </div>
 </section>
 
 <section id="veille">
   <h2>Veille informatique</h2>
-  <p>Lors de ma veille informatique sur l'IA, j'ai utilisé <b>Netvibes</b>. J'ai découvert les avancées majeures de l'IA et les nouvelles technologies émergentes.</p>
-</section>
-
-<section id="missions">
-  <h2>Mes missions</h2>
-  <div class="accordion-missions">
-    <h3 class="accordion-header">Gérer le patrimoine informatique</h3>
-    <div class="accordion-body">
-      <p>Recenser et inventorier les équipements, logiciels et ressources numériques.</p>
-    </div>
-
-    <h3 class="accordion-header">Répondre aux incidents et aux demandes d’assistance et d’évolution</h3>
-    <div class="accordion-body">
-      <p>Traiter les tickets utilisateurs, assurer le support technique et suivre les interventions.</p>
-    </div>
-
-    <h3 class="accordion-header">Développer la présence en ligne de l’organisation</h3>
-    <div class="accordion-body">
-      <p>Mettre à jour le site web, créer du contenu et améliorer le référencement.</p>
-    </div>
-
-    <h3 class="accordion-header">Travailler en mode projet</h3>
-    <div class="accordion-body">
-      <p>Planifier et coordonner les actions dans un cadre projet.</p>
-    </div>
-
-    <h3 class="accordion-header">Mettre à disposition des utilisateurs un service informatique</h3>
-    <div class="accordion-body">
-      <p>Installer, configurer et déployer les services numériques aux utilisateurs.</p>
-    </div>
-
-    <h3 class="accordion-header">Organiser son développement professionnel</h3>
-    <div class="accordion-body">
-      <p>Assurer sa veille, gérer son identité numérique et développer son projet professionnel.</p>
-    </div>
-  </div>
+  <p>Ma veille porte sur les avancées de l'<b>Intelligence Artificielle</b>. J'utilise <b>Netvibes</b> pour agréger des flux RSS de sources spécialisées. J'ai suivi particulièrement l'évolution des agents autonomes et l'intégration de l'IA dans la cybersécurité réseau.</p>
 </section>
 
 <section id="competences">
-  <h2>Tableau de compétences (Annexe B3)</h2>
-  <table>
-    <thead>
-      <tr>
-       <section id="competences">
-  <h2>Tableau de compétences (Annexe B3)</h2>
-  <div style="overflow-x:auto;">
+  <h2>Tableau de synthèse des réalisations (E5)</h2>
+  <p>Voici le récapitulatif de mes activités professionnelles liées au référentiel du BTS SIO.</p>
+  <div class="table-container">
     <table>
       <thead>
         <tr>
-          <th>Compétences</th>
-          <th>Non évaluable</th>
-          <th>Niveau maîtrise insuffisante</th>
-          <th>Niveau maîtrise partielle</th>
-          <th>Bonne maîtrise</th>
-          <th>Excellente maîtrise</th>
-          <th>Indicateurs de performance</th>
+          <th>Réalisations professionnelles</th>
+          <th>Période</th>
+          <th>Gérer le patrimoine</th>
+          <th>Répondre aux incidents</th>
+          <th>Présence en ligne</th>
+          <th>Mode projet</th>
+          <th>Service utilisateur</th>
+          <th>Dével. pro</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Gérer le patrimoine informatique<br>
-            - Recenser et identifier les ressources numériques<br>
-            - Exploiter des référentiels, normes et standards adoptés par le prestataire informatique<br>
-            - Mettre en place et vérifier les niveaux d'habilitation associés à un service<br>
-            - Vérifier les conditions de la continuité d’un service informatique<br>
-            - Gérer des sauvegardes<br>
-            - Vérifier le respect des règles d’utilisation des ressources numériques
-          </td>
-          <td></td><td></td><td></td><td></td><td></td>
-          <td>Le recensement du patrimoine informatique est exhaustif et réalisé au moyen d’un outil de gestion des actifs informatiques... (etc.)</td>
+          <td>Veille informatique sur L'IA</td>
+          <td>01/09/24 au 05/25</td>
+          <td></td><td></td><td></td><td></td><td></td><td>X</td>
         </tr>
         <tr>
-          <td>Répondre aux incidents et aux demandes d’assistance et d’évolution<br>
-            - Collecter, suivre et orienter des demandes<br>
-            - Traiter des demandes concernant les services réseau et système, applicatifs<br>
-            - Traiter des demandes concernant les applications
-          </td>
-          <td></td><td></td><td></td><td></td><td></td>
-          <td>En utilisant les outils adaptés, les demandes d'assistance ont été prises en compte... (etc.)</td>
+          <td>TD : Installation de deux VM (Debian & Win)</td>
+          <td>03/10/23</td>
+          <td></td><td></td><td></td><td></td><td>X</td><td></td>
         </tr>
         <tr>
-          <td>Développer la présence en ligne de l’organisation<br>
-            - Participer à la valorisation de l’image de l’organisation sur les médias numériques<br>
-            - Référencer les services en ligne de l’organisation et mesurer leur visibilité<br>
-            - Participer à l’évolution d’un site Web exploitant les données de l’organisation
-          </td>
-          <td></td><td></td><td></td><td></td><td></td>
-          <td>L'image de l'organisation est conforme aux attentes et valorisée... (etc.)</td>
+          <td>TD : Création d'un réseau NAT entre deux VM Linux</td>
+          <td>11/11/24</td>
+          <td>X</td><td></td><td></td><td>X</td><td>X</td><td>X</td>
         </tr>
         <tr>
-          <td>Travailler en mode projet<br>
-            - Analyser les objectifs et les modalités d’organisation d’un projet<br>
-            - Planifier les activités<br>
-            - Évaluer les indicateurs de suivi d’un projet et analyser les écarts
-          </td>
-          <td></td><td></td><td></td><td></td><td></td>
-          <td>Les objectifs et les modalités d’organisation du projet sont explicites... (etc.)</td>
+          <td>TD : Création de mon Portfolio</td>
+          <td>15/11/25</td>
+          <td></td><td></td><td>X</td><td></td><td></td><td></td>
         </tr>
         <tr>
-          <td>Mettre à disposition des utilisateurs un service informatique<br>
-            - Réaliser les tests d’intégration et d’acceptation d’un service<br>
-            - Déployer un service<br>
-            - Accompagner les utilisateurs dans la mise en place d’un service
-          </td>
-          <td></td><td></td><td></td><td></td><td></td>
-          <td>Des tests pertinents d’intégration et d’acceptation sont rédigés et effectués... (etc.)</td>
+          <td>TD : Déploiement d'un mini-SI d'entreprise</td>
+          <td>17/11 au 18/11/24</td>
+          <td>X</td><td>X</td><td></td><td>X</td><td>X</td><td>X</td>
         </tr>
         <tr>
-          <td>Organiser son développement professionnel<br>
-            - Mettre en place son environnement d’apprentissage personnel<br>
-            - Mettre en œuvre des outils et stratégies de veille informationnelle<br>
-            - Gérer son identité professionnelle<br>
-            - Développer son projet professionnel
-          </td>
-          <td></td><td></td><td></td><td></td><td></td>
-          <td>Les besoins de formation sont identifiés... La veille est régulière... L'identité professionnelle est pertinente et visible sur un réseau social professionnel...</td>
+          <td>Gestion tickets EasyVista (Alternance)</td>
+          <td>01/09/25 à ce jour</td>
+          <td>X</td><td>X</td><td></td><td></td><td>X</td><td>X</td>
+        </tr>
+        <tr>
+          <td>Projet MAC vers PC (Service Com)</td>
+          <td>11/04 au 27/05/25</td>
+          <td>X</td><td></td><td></td><td>X</td><td>X</td><td></td>
         </tr>
       </tbody>
     </table>
   </div>
 </section>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Contenu inchangé -->
-    </tbody>
-  </table>
-</section>
 
 <footer>
-  <p>Contact : steven.thome@aftec.com | LinkedIn | GitHub</p>
+  <p>Contact : <b>steven.thome@aftec.com</b> | <a href="#" style="color:white">LinkedIn</a> | <a href="#" style="color:white">GitHub</a></p>
+  <p>© 2026 - THOME Steven - BTS SIO SISR</p>
 </footer>
 
 <script>
@@ -418,7 +316,7 @@
     toggleButton.textContent = document.body.classList.contains('dark-mode') ? '☀️ Mode clair' : '🌙 Mode sombre';
   });
 
-  // Accordion projets et missions
+  // Accordion projets
   document.querySelectorAll('.accordion-header').forEach(header => {
     header.addEventListener('click', () => {
       const body = header.nextElementSibling;
